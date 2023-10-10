@@ -1,6 +1,6 @@
 {
   "name": "gender-detection-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Detect the gender of a person using his/her first name.",
   "license": "GPL-3.0",
   "main": "dist/index.js",
@@ -36,8 +36,5 @@
     "mocha": "^5.2.0",
     "ts-mocha": "^10.0.0",
     "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "fast-csv": "^4.3.6"
   }
 }
