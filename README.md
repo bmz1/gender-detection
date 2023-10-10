@@ -1,5 +1,9 @@
 # Gender Detection
 
+
+## INFO
+This is a fork of this (repo)[https://github.com/davidemiceli/gender-detection]
+
 ## Description
 A node.js module to determine a person's gender based on his/her first name.  
 
