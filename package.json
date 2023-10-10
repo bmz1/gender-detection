@@ -1,6 +1,6 @@
 {
   "name": "gender-detection-ts",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Detect the gender of a person using his/her first name.",
   "license": "GPL-3.0",
   "main": "dist/index.js",
@@ -14,14 +14,13 @@
     "url": "git+https://github.com/bmz1/gender-detection.git"
   },
   "files": [
-    "index.js",
-    "genders"
+    "dist"
   ],
   "bugs": {
     "url": "https://github.com/bmz1/gender-detection/issues"
   },
   "maintainers": [
-    "davidemiceli"
+    "bmz1"
   ],
   "homepage": "https://github.com/bmz1/gender-detection#readme",
   "directories": {
