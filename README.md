@@ -2,7 +2,7 @@
 
 
 ## INFO
-This is a fork of this (repo)[https://github.com/davidemiceli/gender-detection]
+This is repo is a fork of the original project: https://github.com/davidemiceli/gender-detection
 
 ## Description
 A node.js module to determine a person's gender based on his/her first name.  
@@ -12,12 +12,12 @@ This module is able to clean the text, detecting gender from dirty or unclear na
 
 ## Installation
 
-    $ npm install gender-detection
+    $ npm install gender-detection-ts
 
 ## Example
 ```javascript
 // Require gender detection module
-const gender = require('gender-detection');
+import gender from 'gender-detection-ts';
 
 let g;
 
