@@ -4,8 +4,8 @@
 ## INFO
 This repo is a fork of the original project: https://github.com/davidemiceli/gender-detection
 
-Based on improved dataset: https://www.ssa.gov/oact/babynames/limits.html
-US names from 1890-2022
+
+Based on improved dataset: https://archive.ics.uci.edu/dataset/591/gender+by+name
 
 ## Description
 A node.js module to determine a person's gender based on his/her first name.  
@@ -22,10 +22,16 @@ This module is able to clean the text, detecting gender from dirty or unclear na
 // Require gender detection module
 import gender from 'gender-detection-ts';
 
+interface DetectionOptions {
+  useProbability?: boolean // if a name is unisex, the one with the higher probability will be evaluated
+  useCount?: boolean // same with count
+  // mutually exclusive
+}
+
 let g;
 
 // Use it to detect the gender:
-g = gender.detect('Tim Johnson');
+g = gender.detect('Tim Johnson', options);
 // "male"
 
 g = gender.detect('Holly');

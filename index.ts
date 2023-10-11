@@ -8,20 +8,15 @@ export enum Gender {
   UNKNOWN = 'unknown'
 }
 
-function getGender(firstName: string, lang?: string): string {
-  if (
-    lang &&
-    male[firstName] &&
-    male[firstName][lang] &&
-    female[firstName] &&
-    female[firstName][lang]
-  ) {
-    return Gender.UNISEX
-  } else if (lang && male[firstName] && male[firstName][lang]) {
-    return Gender.MALE
-  } else if (lang && female[firstName] && female[firstName][lang]) {
-    return Gender.FEMALE
-  } else if (male[firstName] && female[firstName]) {
+function getGender(firstName: string, options?: DetectionOptions): string {
+  if (male[firstName] && female[firstName]) {
+    if (options?.useCount) {
+      return (male[firstName].count > female[firstName].count) ? Gender.MALE : Gender.FEMALE
+    }
+
+    if (options?.useProbability) {
+      return (male[firstName].probability > female[firstName].probability) ? Gender.MALE : Gender.FEMALE
+    }
     return Gender.UNISEX
   } else if (male[firstName]) {
     return Gender.MALE
@@ -38,9 +33,14 @@ function getFirstNameFromFullName(fullName: string): string {
     .split(/\s/)[0]
 }
 
-function detect(fullName: string, lang?: string): string {
+interface DetectionOptions {
+  useProbability?: boolean
+  useCount?: boolean
+}
+
+function detect(fullName: string, options?: DetectionOptions): string {
   const firstName = getFirstNameFromFullName(fullName)
-  const resgender = getGender(firstName, lang)
+  const resgender = getGender(firstName, options)
   return resgender
 }
 

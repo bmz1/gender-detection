@@ -3,30 +3,22 @@ import gender from '../index'
 
 describe('Simple names', () => {
   it('It should return male, female, or unknown', () => {
-    assert.equal('male', gender.detect('John', 'en'))
-    assert.equal('female', gender.detect('Holly'))
+    assert.equal('male', gender.detect('John', { useCount: true }))
+    assert.equal('female', gender.detect('Holly', { useCount: true }))
   })
 })
 
 describe('Double names', () => {
   it('It should return male, female, or unknown', () => {
-    assert.equal('male', gender.detect('Tim Johnson'))
-    assert.equal('female', gender.detect('Francesca Rossi'))
+    assert.equal('male', gender.detect('Tim Johnson', { useCount: true }))
+    assert.equal('female', gender.detect('Francesca Rossi', { useCount: true }))
   })
 })
 
 describe('Bad formatted names', () => {
   it('It should return male, female, or unknown', () => {
-    assert.equal('male', gender.detect('BiLL$...'))
-    assert.equal('female', gender.detect('::Jenni♥fer::'))
-  })
-})
-
-describe('Simple names with languages variable', () => {
-  it('It should return male, female, or unknown', () => {
-    assert.equal('male', gender.detect('Johnny', 'en'))
-    assert.equal('male', gender.detect('Andrea', 'it'))
-    assert.equal('unisex', gender.detect('Andrea', 'hgjj'))
+    assert.equal('male', gender.detect('BiLL$...', { useCount: true }))
+    assert.equal('female', gender.detect('::Jenni♥fer::', { useCount: true }))
   })
 })
 
