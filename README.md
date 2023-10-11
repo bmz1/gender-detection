@@ -3,6 +3,8 @@
 
 ## INFO
 This is repo is a fork of the original project: https://github.com/davidemiceli/gender-detection
+Improved dataset: https://www.ssa.gov/oact/babynames/limits.html
+
 
 ## Description
 A node.js module to determine a person's gender based on his/her first name.  
